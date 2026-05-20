@@ -668,98 +668,33 @@
       gap: 24px;
     }
 
-    .insight-card {
+    .insight-item {
       background: rgba(255,255,255,0.95);
       padding: 32px;
       border-radius: 12px;
       border: 1px solid rgba(0,0,0,0.06);
       box-shadow: var(--shadow);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      opacity: 0;
-      transform: translateY(40px);
+      text-align: center;
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s ease;
     }
 
-    .insight-card.revealed {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out, box-shadow 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .insight-card:nth-child(1).revealed { transition-delay: 0s, 0s, 0s, 0s; }
-    .insight-card:nth-child(2).revealed { transition-delay: 0.1s, 0.1s, 0s, 0s; }
-    .insight-card:nth-child(3).revealed { transition-delay: 0.2s, 0.2s, 0s, 0s; }
-
-    .insight-card:hover {
+    .insight-item:hover {
       transform: scale(1.05);
       box-shadow: var(--shadow-lg);
     }
 
-    .insight-card.card-1:hover { box-shadow: 0 8px 32px rgba(255,107,53,0.3); }
-    .insight-card.card-2:hover { box-shadow: 0 8px 32px rgba(255,20,147,0.3); }
-    .insight-card.card-3:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
-
-    .insight-icon {
-      display: inline-flex;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .insight-icon .material-symbols-outlined {
-      font-size: 24px;
-    }
-
-    .insight-card.card-1 .insight-icon {
-      background: rgba(255,107,53,0.1);
-      color: var(--primary);
-    }
-
-    .insight-card.card-2 .insight-icon {
-      background: rgba(255,20,147,0.1);
-      color: var(--secondary);
-    }
-
-    .insight-card.card-3 .insight-icon {
-      background: rgba(51,51,51,0.05);
-      color: var(--on-surface);
-    }
-
-    .insight-card h3 {
+    .insight-item h3 {
       font-family: var(--font-display);
       font-size: 24px;
       font-weight: 700;
       margin-bottom: 12px;
     }
 
-    .insight-card p {
+    .insight-item p {
       font-size: 14px;
       color: var(--text-gray);
       line-height: 1.7;
       margin-bottom: 16px;
-    }
-
-    .insight-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: gap 0.3s ease;
-    }
-
-    .insight-link:hover {
-      gap: 10px;
-    }
-
-    .insight-card.card-1 .insight-link { color: var(--primary); }
-    .insight-card.card-2 .insight-link { color: var(--secondary); }
-    .insight-card.card-3 .insight-link { color: var(--on-surface); }
-
-    .insight-link .material-symbols-outlined {
-      font-size: 16px;
     }
 
     /* ===== FOOTER ===== */
@@ -1068,7 +1003,7 @@
       .insight-grid {
         grid-template-columns: 1fr;
       }
-      .insight-card {
+      .insight-item {
         padding: 20px;
       }
       .footer-grid {
@@ -1402,23 +1337,23 @@
       </div>
 
       <div class="insight-grid">
-        <div class="insight-card card-1">
-          <div class="insight-icon">
-            <span class="material-symbols-outlined">auto_graph</span>
+        <div data-reveal class="insight-item">
+          <div style="display:inline-flex;width:48px;height:48px;border-radius:12px;align-items:center;justify-content:center;background:rgba(255,107,53,0.1);color:var(--primary);margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="font-size:24px;">auto_graph</span>
           </div>
           <h3>Unprecedented Disruption</h3>
           <p>162 flips (69.5% turnover) is historic for Tamil Nadu. No election in the last three decades has seen this level of seat churn. When a new entrant captures 35% of the vote, the old order doesn't just shift — it fractures.</p>
         </div>
-        <div class="insight-card card-2">
-          <div class="insight-icon">
-            <span class="material-symbols-outlined">public</span>
+        <div data-reveal class="insight-item">
+          <div style="display:inline-flex;width:48px;height:48px;border-radius:12px;align-items:center;justify-content:center;background:rgba(255,20,147,0.1);color:var(--secondary);margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="font-size:24px;">public</span>
           </div>
           <h3>Multi-Region Success</h3>
           <p>TVK won seats in all 6 regions. This wasn't a caste-based or district-level wave — it was a complete restructuring of how votes split across the state. TVK built the most geographically diverse coalition Tamil Nadu has seen from a new entrant.</p>
         </div>
-        <div class="insight-card card-3">
-          <div class="insight-icon">
-            <span class="material-symbols-outlined">pie_chart</span>
+        <div data-reveal class="insight-item">
+          <div style="display:inline-flex;width:48px;height:48px;border-radius:12px;align-items:center;justify-content:center;background:rgba(51,51,51,0.05);color:var(--on-surface);margin-bottom:16px;">
+            <span class="material-symbols-outlined" style="font-size:24px;">pie_chart</span>
           </div>
           <h3>Vote Fragmentation</h3>
           <p>The two-party duopoly is gone. Three parties now control 80% of the vote. DMK fell from 37.7% to 24.2%. AIADMK dropped from 33.3% to 21.2%. The traditional duopoly that defined Tamil Nadu politics for decades has been replaced by a multi-way contest.</p>
