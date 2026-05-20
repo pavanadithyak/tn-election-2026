@@ -921,6 +921,73 @@
     }
 
     /* ===== RESPONSIVE ===== */
+    /* ===== SUMMARY BAR ===== */
+    .summary-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 48px var(--padding-desktop);
+    }
+
+    .summary-item {
+      text-align: center;
+      padding: 32px;
+      background: rgba(255,255,255,0.6);
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .summary-item .number {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .summary-item .label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      color: var(--text-gray);
+      margin-top: 8px;
+    }
+
+    .summary-item .desc {
+      font-size: 13px;
+      color: var(--text-gray);
+      margin-top: 6px;
+    }
+
+    /* ===== CHART IMAGE ===== */
+    .chart-image {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: white;
+    }
+
+    .chart-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .narrative-highlight {
+      background: rgba(255,107,53,0.06);
+      border-left: 4px solid var(--primary);
+      padding: 20px 24px;
+      border-radius: 0 12px 12px 0;
+      margin: 24px 0 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--on-surface-light);
+    }
+
     @media (max-width: 1024px) {
       .container {
         padding: 0 var(--padding-tablet);
@@ -1020,6 +1087,16 @@
         flex-direction: column;
         gap: 16px;
       }
+      .summary-bar {
+        grid-template-columns: 1fr;
+        padding: 24px var(--padding-mobile);
+      }
+      .summary-item {
+        padding: 20px;
+      }
+      .summary-item .number {
+        font-size: 32px;
+      }
       .hero {
         padding: 32px var(--padding-mobile);
       }
@@ -1030,7 +1107,7 @@
 
     @media (max-width: 480px) {
       .hero-title {
-        font-size: 28px;
+        font-size: 24px;
       }
       .section-title {
         font-size: 24px;
@@ -1092,51 +1169,55 @@
   <!-- ===== MAIN CONTENT ===== -->
   <main>
 
-    <!-- ===== HERO ===== -->
+    <!-- ===== ACT 1: THE SHOCK (Hero + Stats) ===== -->
     <section class="hero">
-      <div class="hero-watermark" data-parallax="0.15">PROGRESS</div>
+      <div class="hero-watermark" data-parallax="0.15">143 FLIPS</div>
       <div class="hero-content">
-        <span class="hero-label">Election Forecast Edition</span>
-        <h1 class="hero-title">TAMIL NADU 2026:<br />THE DECIDING VOTE</h1>
-        <p class="hero-subtitle">As the Dravidian heartland prepares for a landmark election, new coalitions and shifting demographics reshape the political landscape. Here is your data-driven forecast for Tamil Nadu's most consequential vote.</p>
+        <span class="hero-label">The TVK Earthquake</span>
+        <h1 class="hero-title">143 SEATS FLIPPED —<br />61% OF TAMIL NADU<br />CHANGED HANDS</h1>
+        <p class="hero-subtitle">A brand-new party captured 34.9% of the vote and flipped 143 constituencies in a single election. The most disruptive result Tamil Nadu has seen in decades. Here is the data behind the reshaping.</p>
         <div class="hero-arrow">
           <span class="material-symbols-outlined">keyboard_double_arrow_down</span>
         </div>
       </div>
     </section>
 
-    <!-- ===== SUMMARY STATS ===== -->
+    <!-- ===== HEADLINE STATS ===== -->
     <section class="container" data-reveal>
       <div class="stats-grid">
         <div class="stat-card">
-          <span class="stat-icon material-symbols-outlined">how_to_reg</span>
-          <div class="stat-label">Electorate</div>
-          <div class="stat-number" data-voters>6.3 Cr+</div>
-          <p class="stat-desc">Total registered voters across 234 constituencies, with a 22% youth demographic shaping the outcome.</p>
+          <span class="stat-icon material-symbols-outlined">swap_vert</span>
+          <div class="stat-label">Seats Changed Hands</div>
+          <div class="stat-number">143</div>
+          <p class="stat-desc">Out of 234 constituencies, 143 flipped to a different party. That's 61.5% seat turnover — the highest in Tamil Nadu's recent electoral history.</p>
         </div>
         <div class="stat-card">
           <span class="stat-icon material-symbols-outlined">trending_up</span>
-          <div class="stat-label">Youth Impact</div>
-          <div class="stat-number" data-youth>22%</div>
-          <p class="stat-desc">First-time and young voters (18–29) whose turnout could swing 42 high-stakes constituencies.</p>
+          <div class="stat-label">TVK Vote Share</div>
+          <div class="stat-number">34.9%</div>
+          <p class="stat-desc">A brand-new entrant captured over a third of the state's vote. In 2021, TVK did not exist as an electoral force. In 2026, it leads.</p>
         </div>
         <div class="stat-card">
-          <span class="stat-icon material-symbols-outlined">balance</span>
-          <div class="stat-label">Swing Zone</div>
-          <div class="stat-number" data-swing>42</div>
-          <p class="stat-desc">Swing seats where margins were under 3% last election — the battleground for 2026.</p>
+          <span class="stat-icon material-symbols-outlined">public</span>
+          <div class="stat-label">Statewide Presence</div>
+          <div class="stat-number">6/6</div>
+          <p class="stat-desc">TVK won seats in all six regions — Chennai Metro, North, Central, Kongu, Delta, South. This was not a localized surge but a statewide realignment.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== SANKEY PLACEHOLDER ===== -->
+    <!-- ===== ACT 2: THE FLOW (Sankey) ===== -->
     <section class="container sankey-section" data-reveal>
-      <span class="section-label">Vote Migration</span>
-      <h2 class="section-title">The Flow of Power</h2>
-      <p class="section-subtitle">Visualizing the projected shift of vote share from traditional strongholds to emerging fronts. Each band represents seats moving between coalitions.</p>
+      <span class="section-label">The Flow of Power</span>
+      <h2 class="section-title">Where Did 143 Flipped Seats Go?</h2>
+      <p class="section-subtitle">DMK lost 56 seats directly to TVK. AIADMK lost 22. The two-party duopoly collapsed as votes fragmented across three major players. This Sankey traces every seat that changed hands.</p>
 
       <div class="sankey-container">
         <img src="images/sankey.png" alt="Sankey diagram of seat flows between parties" />
+      </div>
+
+      <div class="narrative-highlight">
+        <strong>The story is in the thickness of the flows.</strong> The thickest bands run from DMK and AIADMK to TVK — proving that the new entrant pulled from <em>both</em> incumbents. This wasn't a split of one party's base; it was a simultaneous drain on the entire two-party system.
       </div>
 
       <div class="sankey-flip-stats">
@@ -1157,11 +1238,26 @@
       <ul data-top-flows style="display:none;"></ul>
     </section>
 
-    <!-- ===== REGIONAL DASHBOARD ===== -->
+    <!-- ===== ACT 3: THE GEOGRAPHY (Regional bars + Map) ===== -->
     <section class="container" data-reveal>
-      <span class="section-label">Interactive Dashboard</span>
+      <span class="section-label">Everywhere at Once</span>
+      <h2 class="section-title">TVK Won Seats in All Six Regions</h2>
+      <p class="section-subtitle">This wasn't a localized surge — TVK built a statewide footprint from Chennai Metro to Kanniyakumari, winning seats in every region. DMK held ground in Delta and Central. AIADMK nearly vanished across the board.</p>
+
+      <div class="chart-image">
+        <img src="images/regional_bars.png" alt="Regional seat distribution bar chart" />
+      </div>
+
+      <div class="narrative-highlight">
+        <strong>Statewide disruption.</strong> TVK didn't rely on a single stronghold. The party won seats across all six regions, proving that the 2026 realignment was a complete restructuring of how votes split across Tamil Nadu, not a regional phenomenon.
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE MAP ===== -->
+    <section class="container" data-reveal>
+      <span class="section-label">Explore the Data</span>
       <h2 class="section-title">Drill down into the heart of the electorate.</h2>
-      <p class="section-subtitle" style="margin-bottom:32px;">Toggle between historical data, voter demographics, and economic indices to understand district-level dynamics.</p>
+      <p class="section-subtitle" style="margin-bottom:32px;">Select a region below to see the detailed seat distribution. Each column shows how TVK, DMK, AIADMK, and others performed across the six zones.</p>
 
       <div class="dashboard-grid">
         <div class="dashboard-left">
@@ -1213,21 +1309,36 @@
       </div>
     </section>
 
-    <!-- ===== VOTE SHARE ANALYSIS ===== -->
+    <!-- ===== ACT 4: THE NUMBERS (Vote share trends + bars) ===== -->
+    <section class="container" data-reveal>
+      <span class="section-label">The Numbers Behind the Flip</span>
+      <h2 class="section-title">From Zero to 34.9% — One Cycle, One Party</h2>
+      <p class="section-subtitle">In 2021, TVK did not exist as an electoral force. In 2026, it captured over a third of the state's vote. DMK and AIADMK both lost significant ground as the electorate fragmented across three major players.</p>
+
+      <div class="chart-image">
+        <img src="images/vote_share_trends.png" alt="Vote share trends 2021 to 2026 line chart" />
+      </div>
+
+      <div class="narrative-highlight">
+        <strong>The duopoly is over.</strong> In 2021, DMK and AIADMK together controlled 57.9% of the vote. In 2026, that combined share fell to 49.6%. TVK's 34.9% didn't just come from one side — it pulled from both, creating a three-party system where a two-party system once stood.
+      </div>
+    </section>
+
+    <!-- ===== VOTE SHARE BREAKDOWN ===== -->
     <section class="container" data-reveal>
       <div class="vote-share-header">
         <div>
           <h2 class="section-title">The Mathematics of Sentiment</h2>
-          <p class="section-subtitle" style="margin:8px 0 0;">Breaking down the vote share projections and identifying the issues that matter most to Tamil Nadu's electorate.</p>
+          <p class="section-subtitle" style="margin:8px 0 0;">Breaking down the vote share projections across major parties and the issues driving Tamil Nadu's electorate in 2026.</p>
         </div>
         <div class="legend">
           <div class="legend-item">
             <div class="legend-dot dot-primary"></div>
-            <span>2026 Projected</span>
+            <span>2026</span>
           </div>
           <div class="legend-item">
             <div class="legend-dot dot-gray"></div>
-            <span>2021 Baseline</span>
+            <span>2021</span>
           </div>
         </div>
       </div>
@@ -1250,51 +1361,58 @@
       </div>
     </section>
 
-    <!-- ===== INSIGHT CARDS ===== -->
+    <!-- ===== ACT 5: THE PATTERN (Findings) ===== -->
     <section class="container" data-reveal>
       <div class="insight-header">
-        <span class="section-label">Editorial Insights</span>
-        <h2 class="section-title">The Narrative Arc</h2>
+        <span class="section-label">The Pattern</span>
+        <h2 class="section-title">Three Insights That Explain the Earthquake</h2>
       </div>
 
       <div class="insight-grid">
         <div class="insight-card card-1">
           <div class="insight-icon">
-            <span class="material-symbols-outlined">diversity_3</span>
+            <span class="material-symbols-outlined">auto_graph</span>
           </div>
-          <h3>The Alliance Pivot</h3>
-          <p>Emerging third-front movements and cross-coalition negotiations are redrawing traditional voting blocs. The DMK's dominance faces its most credible challenge in two decades.</p>
-          <a href="#" class="insight-link">
-            Read Analysis
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <h3>Unprecedented Disruption</h3>
+          <p>143 flips (61% turnover) is historic for Tamil Nadu. No election in the last three decades has seen this level of seat churn. When a new entrant captures 35% of the vote, the old order doesn't just shift — it fractures.</p>
         </div>
         <div class="insight-card card-2">
           <div class="insight-icon">
-            <span class="material-symbols-outlined">devices</span>
+            <span class="material-symbols-outlined">public</span>
           </div>
-          <h3>The Digital Frontier</h3>
-          <p>With over 20% of the electorate active on social media platforms, digital campaigning has become decisive. TVK's ground-up digital strategy is reshaping voter outreach.</p>
-          <a href="#" class="insight-link">
-            Read Analysis
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <h3>Multi-Region Success</h3>
+          <p>TVK won seats in all 6 regions. This wasn't a caste-based or district-level wave — it was a complete restructuring of how votes split across the state. TVK built the most geographically diverse coalition Tamil Nadu has seen from a new entrant.</p>
         </div>
         <div class="insight-card card-3">
           <div class="insight-icon">
-            <span class="material-symbols-outlined">agriculture</span>
+            <span class="material-symbols-outlined">pie_chart</span>
           </div>
-          <h3>The Rural Pulse</h3>
-          <p>Agricultural policy and delta-region water rights remain the sleeper issues of 2026. Rural turnout in the Cauvery delta could determine the final seat count.</p>
-          <a href="#" class="insight-link">
-            Read Analysis
-            <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
+          <h3>Vote Fragmentation</h3>
+          <p>The two-party system is gone. Three parties now control 80% of the vote. DMK fell from 37.8% to 31.2%. AIADMK dropped from 20.1% to 18.4%. The traditional duopoly that defined Tamil Nadu politics for decades has been replaced by a three-way contest.</p>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- ===== SUMMARY BAR ===== -->
+  <section class="summary-bar" data-reveal>
+    <div class="summary-item">
+      <div class="number">61.5%</div>
+      <div class="label">Seats Flipped</div>
+      <div class="desc">Of 234 constituencies changed hands</div>
+    </div>
+    <div class="summary-item">
+      <div class="number">34.9%</div>
+      <div class="label">TVK Vote Share</div>
+      <div class="desc">Zero to a third of the state in one cycle</div>
+    </div>
+    <div class="summary-item">
+      <div class="number">108</div>
+      <div class="label">TVK Seats Won</div>
+      <div class="desc">Most by any party in 2026 election</div>
+    </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
@@ -1302,7 +1420,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h3>TAMIL NADU 2026</h3>
-          <p class="footer-desc">A comprehensive data-driven forecast for the Tamil Nadu Legislative Assembly election. Built with open data, statistical models, and journalistic rigor.</p>
+          <p class="footer-desc">A data-driven analysis of the 2026 Tamil Nadu Legislative Assembly election — chronicling how TVK flipped 143 seats and reshaped the state's political landscape. Built with open ECI data.</p>
         </div>
         <div class="footer-col">
           <div class="footer-subtitle">Explore</div>

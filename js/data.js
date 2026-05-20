@@ -14,20 +14,6 @@ const DataManager = {
     }
   },
 
-  injectHero(metadata) {
-    const el = document.querySelector('[data-stat="election_year"]');
-    if (el) el.textContent = metadata.election_year;
-  },
-
-  injectSummaryStats(metadata) {
-    const voters = document.querySelector('[data-voters]');
-    if (voters) voters.textContent = metadata.total_voters;
-    const youth = document.querySelector('[data-youth]');
-    if (youth) youth.textContent = metadata.youth_percentage + '%';
-    const swing = document.querySelector('[data-swing]');
-    if (swing) swing.textContent = metadata.swing_seats;
-  },
-
   injectRegionalData(seatsByRegion) {
     const regionSelect = document.querySelector('[data-region-select]');
     if (!regionSelect) return;
@@ -116,8 +102,6 @@ const DataManager = {
 document.addEventListener('DOMContentLoaded', async () => {
   const data = await DataManager.loadData();
   if (data) {
-    DataManager.injectHero(data.metadata);
-    DataManager.injectSummaryStats(data.metadata);
     DataManager.injectRegionalData(data.seatsByRegion);
     DataManager.injectVoteShare(data.voteShare);
     DataManager.injectPriorityIssues(data.metadata);
