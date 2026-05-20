@@ -344,96 +344,17 @@
     }
 
     .sankey-container {
-      background: rgba(239, 227, 193, 0.3);
       height: 500px;
       border-radius: 20px;
       border: 1px solid #ccc;
-      position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background: white;
     }
 
-    .sankey-bars {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      padding: 60px;
-      pointer-events: none;
-    }
-
-    .sankey-bar {
-      flex: 1;
-      height: 200px;
-      border-radius: 12px;
-      transition: all 0.8s ease;
-    }
-
-    .sankey-bar.bar1 {
-      background: linear-gradient(135deg, rgba(255,107,53,0.2), rgba(255,107,53,0.05));
-      opacity: 0.4;
-      filter: blur(8px);
-    }
-
-    .sankey-bar.bar2 {
-      background: linear-gradient(180deg, rgba(255,20,147,0.2), rgba(255,20,147,0.05));
-      opacity: 0.4;
-      filter: blur(8px);
-    }
-
-    .sankey-bar.bar3 {
-      background: linear-gradient(45deg, rgba(51,51,51,0.1), rgba(51,51,51,0.02));
-      opacity: 0.4;
-      filter: blur(8px);
-    }
-
-    .sankey-container:hover .sankey-bar {
-      filter: blur(0);
-      opacity: 0.7;
-    }
-
-    .sankey-center {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .sankey-icon .material-symbols-outlined {
-      font-size: 96px;
-      color: var(--primary);
-      filter: drop-shadow(0 4px 12px rgba(255,107,53,0.3));
-    }
-
-    .sankey-center-text {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-style: italic;
-      color: var(--on-surface-light);
-    }
-
-    .sankey-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 14px;
-      padding: 12px 32px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      transition: box-shadow 0.3s ease;
-    }
-
-    .sankey-btn:hover {
-      box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+    .sankey-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .sankey-flip-stats {
@@ -489,67 +410,16 @@
       border: 1px solid var(--border);
     }
 
-    .map-placeholder {
+    .map-container img {
       width: 100%;
       height: 100%;
-      background: linear-gradient(145deg, #e8dcc6, #efe3c1, #d4c8b2);
-      position: relative;
-      transition: filter 1s ease, opacity 1s ease;
+      object-fit: contain;
       filter: grayscale(0.8) opacity(0.7);
+      transition: filter 1s ease;
     }
 
-    .map-container:hover .map-placeholder {
+    .map-container:hover img {
       filter: grayscale(0) opacity(1);
-    }
-
-    .map-pin {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      font-family: var(--font-body);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .map-pin:hover {
-      transform: scale(1.1);
-    }
-
-    .map-pin.pin-1 {
-      top: 25%;
-      left: 30%;
-    }
-
-    .map-pin.pin-2 {
-      bottom: 30%;
-      right: 25%;
-    }
-
-    .pin-dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 3px solid var(--primary);
-      background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    }
-
-    .map-pin.pin-2 .pin-dot {
-      border-color: var(--secondary);
-    }
-
-    .pin-label {
-      background: white;
-      padding: 4px 10px;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      font-size: 11px;
-      font-weight: 600;
-      white-space: nowrap;
     }
 
     .dashboard-buttons {
@@ -1113,13 +983,7 @@
       .sankey-container {
         height: 360px;
       }
-      .sankey-bars {
-        padding: 24px;
-        gap: 16px;
-      }
-      .sankey-bar {
-        height: 120px;
-      }
+
       .dashboard-grid {
         grid-template-columns: 1fr;
       }
@@ -1272,18 +1136,7 @@
       <p class="section-subtitle">Visualizing the projected shift of vote share from traditional strongholds to emerging fronts. Each band represents seats moving between coalitions.</p>
 
       <div class="sankey-container">
-        <div class="sankey-bars">
-          <div class="sankey-bar bar1"></div>
-          <div class="sankey-bar bar2"></div>
-          <div class="sankey-bar bar3"></div>
-        </div>
-        <div class="sankey-center">
-          <div class="sankey-icon">
-            <span class="material-symbols-outlined">leaderboard</span>
-          </div>
-          <p class="sankey-center-text">Interactive Sankey Visualization Placeholder</p>
-          <button class="sankey-btn">Explore Migration Data</button>
-        </div>
+        <img src="images/sankey.png" alt="Sankey diagram of seat flows between parties" />
       </div>
 
       <div class="sankey-flip-stats">
@@ -1354,16 +1207,7 @@
 
         <div class="dashboard-right">
           <div class="map-container" data-map-container>
-            <div class="map-placeholder">
-              <div class="map-pin pin-1" data-map-pin="Chennai North">
-                <div class="pin-dot"></div>
-                <div class="pin-label">Chennai North</div>
-              </div>
-              <div class="map-pin pin-2" data-map-pin="Madurai Central">
-                <div class="pin-dot"></div>
-                <div class="pin-label">Madurai Central</div>
-              </div>
-            </div>
+            <img src="images/tn_map.png" alt="Tamil Nadu regional seat distribution" />
           </div>
         </div>
       </div>
