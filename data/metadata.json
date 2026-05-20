@@ -1,0 +1,17 @@
+{
+  "election_year": 2026,
+  "total_seats": 234,
+  "total_constituencies": 234,
+  "magic_number": 118,
+  "total_voters": "6.3 crores",
+  "youth_percentage": 22,
+  "swing_seats": 42,
+  "tvk_emergence": {"2021": 0.0, "2026": 34.9},
+  "dmk_change": {"2021": 37.8, "2026": 31.2},
+  "key_issues": [
+    {"issue": "Job Creation", "support": 68},
+    {"issue": "Infrastructure", "support": 54},
+    {"issue": "Education Reform", "support": 42},
+    {"issue": "Social Welfare", "support": 31}
+  ]
+}

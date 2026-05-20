@@ -1,0 +1,20 @@
+{
+  "flows": [
+    {"source": "DMK", "target": "TVK", "seats": 34},
+    {"source": "AIADMK", "target": "TVK", "seats": 28},
+    {"source": "DMK", "target": "AIADMK", "seats": 12},
+    {"source": "AIADMK", "target": "DMK", "seats": 8},
+    {"source": "DMK", "target": "PMK", "seats": 10},
+    {"source": "AIADMK", "target": "PMK", "seats": 14},
+    {"source": "DMK", "target": "VCK", "seats": 6},
+    {"source": "AIADMK", "target": "VCK", "seats": 4},
+    {"source": "PMK", "target": "TVK", "seats": 8},
+    {"source": "VCK", "target": "TVK", "seats": 5},
+    {"source": "DMK", "target": "NTK", "seats": 7},
+    {"source": "AIADMK", "target": "NTK", "seats": 4},
+    {"source": "INC", "target": "DMK", "seats": 2},
+    {"source": "BJP", "target": "AIADMK", "seats": 1}
+  ],
+  "total_flips": 143,
+  "flip_percentage": 61.5
+}

@@ -1,0 +1,10 @@
+{
+  "regions": [
+    {"name": "Central", "dmk": 18, "tvk": 22, "aiadmk": 8, "pmk": 4, "vck": 2},
+    {"name": "Chennai Metro", "dmk": 16, "tvk": 28, "aiadmk": 6, "pmk": 0, "vck": 4},
+    {"name": "Delta", "dmk": 14, "tvk": 20, "aiadmk": 12, "pmk": 8, "vck": 2},
+    {"name": "Kongu", "dmk": 12, "tvk": 18, "aiadmk": 8, "pmk": 10, "vck": 0},
+    {"name": "North", "dmk": 8, "tvk": 16, "aiadmk": 12, "pmk": 2, "vck": 2},
+    {"name": "South", "dmk": 11, "tvk": 14, "aiadmk": 15, "pmk": 2, "vck": 2}
+  ]
+}
