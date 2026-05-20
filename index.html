@@ -311,11 +311,6 @@
       line-height: 1.6;
     }
 
-    /* ===== SANKEY PLACEHOLDER ===== */
-    .sankey-section {
-      text-align: center;
-    }
-
     .section-label {
       font-family: var(--font-body);
       font-size: 12px;
@@ -341,20 +336,6 @@
       color: var(--on-surface-light);
       max-width: 560px;
       margin: 0 auto 40px;
-    }
-
-    .sankey-container {
-      height: 500px;
-      border-radius: 20px;
-      border: 1px solid #ccc;
-      overflow: hidden;
-      background: white;
-    }
-
-    .sankey-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
     }
 
     .sankey-flip-stats {
@@ -988,6 +969,11 @@
       color: var(--on-surface-light);
     }
 
+    /* Fix gap in Three Insights section */
+    [id="the-pattern"] .section-subtitle {
+      margin-bottom: 24px;
+    }
+
     @media (max-width: 1024px) {
       .container {
         padding: 0 var(--padding-tablet);
@@ -1047,8 +1033,9 @@
       .stat-number {
         font-size: 32px;
       }
-      .sankey-container {
-        height: 360px;
+      #the-flow div[style*="height:550px"] {
+        height: 400px !important;
+        padding: 24px !important;
       }
 
       .dashboard-grid {
@@ -1118,8 +1105,9 @@
       .map-container {
         height: 300px;
       }
-      .sankey-container {
-        height: 300px;
+      #the-flow div[style*="height:550px"] {
+        height: 350px !important;
+        padding: 16px !important;
       }
       .priority-issues-grid {
         gap: 8px;
@@ -1207,18 +1195,18 @@
     </section>
 
     <!-- ===== ACT 2: THE FLOW (Sankey) ===== -->
-    <section id="the-flow" class="container sankey-section" data-reveal>
-      <span class="section-label">The Flow of Power</span>
-      <h2 class="section-title">Where Did 143 Flipped Seats Go?</h2>
-      <p class="section-subtitle">DMK lost 56 seats directly to TVK. AIADMK lost 22. The two-party duopoly collapsed as votes fragmented across three major players. This Sankey traces every seat that changed hands.</p>
-
-      <div class="sankey-container">
-        <img src="images/sankey.png" alt="Sankey diagram of seat flows between parties" />
+    <section id="the-flow" class="container" data-reveal style="padding-top:48px;padding-bottom:48px;">
+      <div style="margin-bottom:24px;">
+        <span class="section-label">The Flow of Power</span>
+        <h2 class="section-title" style="margin-bottom:12px;">Where Did 143 Flipped Seats Go?</h2>
+        <p class="section-subtitle" style="margin-bottom:0;">DMK lost 56 seats directly to TVK. AIADMK lost 22. The two-party duopoly collapsed as votes fragmented across three major players. This Sankey traces every seat that changed hands.</p>
       </div>
 
-      <div class="narrative-highlight">
-        <strong>The story is in the thickness of the flows.</strong> The thickest bands run from DMK and AIADMK to TVK — proving that the new entrant pulled from <em>both</em> incumbents. This wasn't a split of one party's base; it was a simultaneous drain on the entire two-party system.
+      <div style="background:white;border:1px solid #e0e0e0;padding:32px;border-radius:16px;height:550px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+        <img src="images/sankey.png" alt="Top 5 seat flow transitions" style="width:100%;height:100%;object-fit:contain;" />
       </div>
+
+      <p style="margin-top:16px;margin-bottom:0;text-align:center;font-size:12px;color:var(--text-light);font-style:italic;">Top 5 seat transitions shown (143 total flips across all parties)</p>
 
       <div class="sankey-flip-stats">
         <div class="sankey-flip-stat">
