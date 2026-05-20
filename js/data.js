@@ -28,11 +28,16 @@ const DataManager = {
     const updateRegion = (region) => {
       const seatsEl = document.querySelector('[data-region-seats]');
       if (seatsEl) {
-        seatsEl.textContent = `${region.dmk + region.tvk + region.aiadmk + region.pmk + region.vck} total seats`;
+        const total = region.dmk + region.tvk + region.aiadmk + region.pmk + region.vck + (region.others || 0);
+        seatsEl.textContent = `${total} total seats`;
       }
       const descEl = document.querySelector('[data-region-description]');
       if (descEl) {
-        descEl.textContent = `${region.name}: TVK ${region.tvk}, DMK ${region.dmk}, AIADMK ${region.aiadmk}, PMK ${region.pmk}, VCK ${region.vck}`;
+        const parts = [`${region.name}: TVK ${region.tvk}, DMK ${region.dmk}, AIADMK ${region.aiadmk}`];
+        if (region.pmk) parts.push(`PMK ${region.pmk}`);
+        if (region.vck) parts.push(`VCK ${region.vck}`);
+        if (region.others) parts.push(`Others ${region.others}`);
+        descEl.textContent = parts.join(', ') + '. Click a constituency on the map for full details.';
       }
     };
 

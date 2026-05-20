@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
   <style>
     *, *::before, *::after {
@@ -391,7 +392,7 @@
       border: 1px solid var(--border);
     }
 
-    .map-container img {
+    .map-container img:not(.leaflet-tile):not(.leaflet-marker-icon):not(.leaflet-marker-shadow):not(.leaflet-popup-close-button) {
       width: 100%;
       height: 100%;
       object-fit: contain;
@@ -399,7 +400,7 @@
       transition: filter 1s ease;
     }
 
-    .map-container:hover img {
+    .map-container:hover img:not(.leaflet-tile):not(.leaflet-marker-icon):not(.leaflet-marker-shadow):not(.leaflet-popup-close-button) {
       filter: grayscale(0) opacity(1);
     }
 
@@ -969,6 +970,18 @@
       color: var(--on-surface-light);
     }
 
+    /* ===== LEAFLET OVERRIDES ===== */
+    .leaflet-popup-content-wrapper {
+      border-radius: 12px !important;
+      font-family: var(--font-body);
+    }
+    .leaflet-popup-content {
+      margin: 12px 16px !important;
+    }
+    .leaflet-control-zoom a {
+      font-family: var(--font-body);
+    }
+
     /* Fix gap in Three Insights section */
     [id="the-pattern"] .section-subtitle {
       margin-bottom: 24px;
@@ -1159,11 +1172,11 @@
 
     <!-- ===== ACT 1: THE SHOCK (Hero + Stats) ===== -->
     <section id="the-shock" class="hero">
-      <div class="hero-watermark" data-parallax="0.15">143 FLIPS</div>
+      <div class="hero-watermark" data-parallax="0.15">162 FLIPS</div>
       <div class="hero-content">
         <span class="hero-label">The TVK Earthquake</span>
-        <h1 class="hero-title">143 SEATS FLIPPED —<br />61% OF TAMIL NADU<br />CHANGED HANDS</h1>
-        <p class="hero-subtitle">A brand-new party captured 34.9% of the vote and flipped 143 constituencies in a single election. The most disruptive result Tamil Nadu has seen in decades. Here is the data behind the reshaping.</p>
+        <h1 class="hero-title">162 SEATS FLIPPED —<br />69.5% OF TAMIL NADU<br />CHANGED HANDS</h1>
+        <p class="hero-subtitle">A brand-new party captured 34.9% of the vote and flipped 162 constituencies in a single election. The most disruptive result Tamil Nadu has seen in decades. Here is the data behind the reshaping.</p>
         <div class="hero-arrow">
           <span class="material-symbols-outlined">keyboard_double_arrow_down</span>
         </div>
@@ -1176,8 +1189,8 @@
         <div class="stat-card">
           <span class="stat-icon material-symbols-outlined">swap_vert</span>
           <div class="stat-label">Seats Changed Hands</div>
-          <div class="stat-number">143</div>
-          <p class="stat-desc">Out of 234 constituencies, 143 flipped to a different party. That's 61.5% seat turnover — the highest in Tamil Nadu's recent electoral history.</p>
+          <div class="stat-number">162</div>
+          <p class="stat-desc">Out of 233 constituencies, 162 flipped to a different party. That's 69.5% seat turnover — the highest in Tamil Nadu's recent electoral history.</p>
         </div>
         <div class="stat-card">
           <span class="stat-icon material-symbols-outlined">trending_up</span>
@@ -1189,7 +1202,7 @@
           <span class="stat-icon material-symbols-outlined">public</span>
           <div class="stat-label">Statewide Presence</div>
           <div class="stat-number">6/6</div>
-          <p class="stat-desc">TVK won seats in all six regions — Chennai Metro, North, Central, Kongu, Delta, South. This was not a localized surge but a statewide realignment.</p>
+          <p class="stat-desc">TVK won seats in all six regions — Chennai Metro, North, Central, Kongu, Delta, South. This was not a localized surge but a statewide realignment, winning 107 seats across the state.</p>
         </div>
       </div>
     </section>
@@ -1211,12 +1224,12 @@
         <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:24px;border:1px solid #ddd;">
           <span style="font-size:11px;font-weight:600;color:var(--primary);letter-spacing:0.15em;text-transform:uppercase;">Q2 &mdash; The Flip Story</span>
           <h4 style="font-family:var(--font-display);font-size:18px;margin:12px 0 8px;">In how many constituencies did the winner change?</h4>
-          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">143 constituencies flipped &mdash; 61.5% of the total. DMK lost 56 seats directly to TVK, AIADMK lost 22. The Sankey diagram visualizes every seat movement, and the thickest flows run from both incumbents to the new entrant.</p>
+          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">162 constituencies flipped &mdash; 69.5% of the total. DMK lost 64 seats directly to TVK, AIADMK lost 26. The Sankey diagram visualizes every seat movement, and the thickest flows run from both incumbents to the new entrant.</p>
         </div>
         <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:24px;border:1px solid #ddd;">
           <span style="font-size:11px;font-weight:600;color:var(--primary);letter-spacing:0.15em;text-transform:uppercase;">Q3 &mdash; The Vote Share Story</span>
           <h4 style="font-family:var(--font-display);font-size:18px;margin:12px 0 8px;">Where did TVK&rsquo;s votes come from?</h4>
-          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">TVK went from 0% to 34.9% in one cycle, pulling from <em>both</em> incumbents. DMK dropped 13.5 percentage points. AIADMK dropped 12.1. The two-party duopoly that defined Tamil Nadu for decades became a three-party system overnight.</p>
+          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">TVK went from 0% to 34.9% in one cycle, pulling from <em>both</em> incumbents. DMK dropped 13.5 percentage points. AIADMK dropped 12.1. NTK and smaller parties also lost ground. The two-party duopoly that defined Tamil Nadu for decades became a multi-party contest overnight.</p>
         </div>
       </div>
     </section>
@@ -1225,27 +1238,27 @@
     <section id="the-flow" class="container" data-reveal style="padding-top:48px;padding-bottom:48px;">
       <div style="margin-bottom:24px;">
         <span class="section-label">The Flow of Power</span>
-        <h2 class="section-title" style="margin-bottom:12px;">Where Did 143 Flipped Seats Go?</h2>
-        <p class="section-subtitle" style="margin-bottom:0;">DMK lost 56 seats directly to TVK. AIADMK lost 22. The two-party duopoly collapsed as votes fragmented across three major players. This Sankey traces every seat that changed hands.</p>
+        <h2 class="section-title" style="margin-bottom:12px;">Where Did 162 Flipped Seats Go?</h2>
+        <p class="section-subtitle" style="margin-bottom:0;">DMK lost 64 seats directly to TVK. AIADMK lost 26. The two-party duopoly collapsed as votes fragmented across multiple players. This Sankey traces every seat that changed hands.</p>
       </div>
 
       <div style="background:white;border:1px solid #e0e0e0;padding:32px;border-radius:16px;height:550px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
         <img src="images/sankey.png" alt="Top 5 seat flow transitions" style="width:100%;height:100%;object-fit:contain;" />
       </div>
 
-      <p style="margin-top:16px;margin-bottom:0;text-align:center;font-size:12px;color:var(--text-light);font-style:italic;">Top 5 seat transitions shown (143 total flips across all parties)</p>
+      <p style="margin-top:16px;margin-bottom:0;text-align:center;font-size:12px;color:var(--text-light);font-style:italic;">All 23 seat transitions shown (162 total flips across all parties)</p>
 
       <div class="sankey-flip-stats">
         <div class="sankey-flip-stat">
-          <div class="number" data-total-flips>143</div>
+          <div class="number" data-total-flips>162</div>
           <div class="label">Total Seat Flips</div>
         </div>
         <div class="sankey-flip-stat">
-          <div class="number" data-flip-percentage>61.5%</div>
+          <div class="number" data-flip-percentage>69.5%</div>
           <div class="label">Flip Percentage</div>
         </div>
         <div class="sankey-flip-stat">
-          <div class="number" data-stat="total_seats">234</div>
+          <div class="number" data-stat="total_seats">233</div>
           <div class="label">Total Seats</div>
         </div>
       </div>
@@ -1318,7 +1331,12 @@
 
         <div class="dashboard-right">
           <div class="map-container" data-map-container>
-            <img src="images/tn_map.png" alt="Tamil Nadu regional seat distribution" />
+            <div id="map" style="width:100%;height:100%;"></div>
+          </div>
+          <div style="margin-top:8px;">
+            <select class="region-select" data-map-region>
+              <option value="">All Regions</option>
+            </select>
           </div>
         </div>
       </div>
@@ -1335,7 +1353,7 @@
       </div>
 
       <div class="narrative-highlight">
-        <strong>The duopoly is over.</strong> In 2021, DMK and AIADMK together controlled 57.9% of the vote. In 2026, that combined share fell to 49.6%. TVK's 34.9% didn't just come from one side — it pulled from both, creating a three-party system where a two-party system once stood.
+        <strong>The duopoly is over.</strong> In 2021, DMK and AIADMK together controlled 71.0% of the vote. In 2026, that combined share fell to 45.4%. TVK's 34.9% didn't just come from one side — it pulled from both, creating a multi-party system where a two-party duopoly once stood.
       </div>
     </section>
 
@@ -1389,7 +1407,7 @@
             <span class="material-symbols-outlined">auto_graph</span>
           </div>
           <h3>Unprecedented Disruption</h3>
-          <p>143 flips (61% turnover) is historic for Tamil Nadu. No election in the last three decades has seen this level of seat churn. When a new entrant captures 35% of the vote, the old order doesn't just shift — it fractures.</p>
+          <p>162 flips (69.5% turnover) is historic for Tamil Nadu. No election in the last three decades has seen this level of seat churn. When a new entrant captures 35% of the vote, the old order doesn't just shift — it fractures.</p>
         </div>
         <div class="insight-card card-2">
           <div class="insight-icon">
@@ -1403,14 +1421,14 @@
             <span class="material-symbols-outlined">pie_chart</span>
           </div>
           <h3>Vote Fragmentation</h3>
-          <p>The two-party system is gone. Three parties now control 80% of the vote. DMK fell from 37.8% to 31.2%. AIADMK dropped from 20.1% to 18.4%. The traditional duopoly that defined Tamil Nadu politics for decades has been replaced by a three-way contest.</p>
+          <p>The two-party duopoly is gone. Three parties now control 80% of the vote. DMK fell from 37.7% to 24.2%. AIADMK dropped from 33.3% to 21.2%. The traditional duopoly that defined Tamil Nadu politics for decades has been replaced by a multi-way contest.</p>
         </div>
       </div>
 
       <div class="conclusion" style="margin-top:28px;padding:24px 32px;background:rgba(255,255,255,0.5);border-radius:16px;border:1px solid #ddd;text-align:center;max-width:800px;margin-left:auto;margin-right:auto;">
         <span class="section-label" style="display:block;margin-bottom:12px;">Conclusion</span>
         <p style="font-family:var(--font-display);font-size:22px;font-style:italic;line-height:1.6;color:var(--on-surface);max-width:680px;margin:0 auto;">
-          &ldquo;The 2026 Tamil Nadu election was not a shift — it was a reset. One new party, 143 flipped seats, and a two-party system replaced by a three-way contest. The data tells a story of unprecedented disruption, and the old order has not simply changed — it has been replaced.&rdquo;
+          &ldquo;The 2026 Tamil Nadu election was not a shift — it was a reset. One new party, 162 flipped seats, and a two-party duopoly replaced by a multi-party contest. The data tells a story of unprecedented disruption, and the old order has not simply changed — it has been replaced.&rdquo;
         </p>
         <p style="font-size:13px;color:var(--text-gray);margin-top:16px;">
           All data sourced from the Election Commission of India. Analysis reproducible via the project GitHub repository.
@@ -1423,9 +1441,9 @@
   <!-- ===== SUMMARY BAR ===== -->
   <section class="summary-bar" data-reveal>
     <div class="summary-item">
-      <div class="number">61.5%</div>
+      <div class="number">69.5%</div>
       <div class="label">Seats Flipped</div>
-      <div class="desc">Of 234 constituencies changed hands</div>
+      <div class="desc">Of 233 constituencies changed hands</div>
     </div>
     <div class="summary-item">
       <div class="number">34.9%</div>
@@ -1433,7 +1451,7 @@
       <div class="desc">Zero to a third of the state in one cycle</div>
     </div>
     <div class="summary-item">
-      <div class="number">108</div>
+      <div class="number">107</div>
       <div class="label">TVK Seats Won</div>
       <div class="desc">Most by any party in 2026 election</div>
     </div>
@@ -1445,7 +1463,7 @@
       <div class="footer-grid">
         <div class="footer-col">
           <h3>TAMIL NADU 2026</h3>
-          <p class="footer-desc">A data-driven analysis of the 2026 Tamil Nadu Legislative Assembly election — chronicling how TVK flipped 143 seats and reshaped the state's political landscape. Built with open ECI data.</p>
+          <p class="footer-desc">A data-driven analysis of the 2026 Tamil Nadu Legislative Assembly election — chronicling how TVK flipped 162 seats and reshaped the state's political landscape. Built with open ECI data.</p>
         </div>
         <div class="footer-col">
           <div class="footer-subtitle">Sections</div>
@@ -1487,7 +1505,14 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/data.js"></script>
   <script src="js/interactions.js"></script>
+  <script src="js/geomap.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      GeoMap.init();
+    });
+  </script>
 </body>
 </html>
