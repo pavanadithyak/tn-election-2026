@@ -1170,7 +1170,7 @@
   <main>
 
     <!-- ===== ACT 1: THE SHOCK (Hero + Stats) ===== -->
-    <section class="hero">
+    <section id="the-shock" class="hero">
       <div class="hero-watermark" data-parallax="0.15">143 FLIPS</div>
       <div class="hero-content">
         <span class="hero-label">The TVK Earthquake</span>
@@ -1207,7 +1207,7 @@
     </section>
 
     <!-- ===== ACT 2: THE FLOW (Sankey) ===== -->
-    <section class="container sankey-section" data-reveal>
+    <section id="the-flow" class="container sankey-section" data-reveal>
       <span class="section-label">The Flow of Power</span>
       <h2 class="section-title">Where Did 143 Flipped Seats Go?</h2>
       <p class="section-subtitle">DMK lost 56 seats directly to TVK. AIADMK lost 22. The two-party duopoly collapsed as votes fragmented across three major players. This Sankey traces every seat that changed hands.</p>
@@ -1239,7 +1239,7 @@
     </section>
 
     <!-- ===== ACT 3: THE GEOGRAPHY (Regional bars + Map) ===== -->
-    <section class="container" data-reveal>
+    <section id="the-geography" class="container" data-reveal>
       <span class="section-label">Everywhere at Once</span>
       <h2 class="section-title">TVK Won Seats in All Six Regions</h2>
       <p class="section-subtitle">This wasn't a localized surge — TVK built a statewide footprint from Chennai Metro to Kanniyakumari, winning seats in every region. DMK held ground in Delta and Central. AIADMK nearly vanished across the board.</p>
@@ -1254,7 +1254,7 @@
     </section>
 
     <!-- ===== INTERACTIVE MAP ===== -->
-    <section class="container" data-reveal>
+    <section id="explore-data" class="container" data-reveal>
       <span class="section-label">Explore the Data</span>
       <h2 class="section-title">Drill down into the heart of the electorate.</h2>
       <p class="section-subtitle" style="margin-bottom:32px;">Select a region below to see the detailed seat distribution. Each column shows how TVK, DMK, AIADMK, and others performed across the six zones.</p>
@@ -1310,7 +1310,7 @@
     </section>
 
     <!-- ===== ACT 4: THE NUMBERS (Vote share trends + bars) ===== -->
-    <section class="container" data-reveal>
+    <section id="the-numbers" class="container" data-reveal>
       <span class="section-label">The Numbers Behind the Flip</span>
       <h2 class="section-title">From Zero to 34.9% — One Cycle, One Party</h2>
       <p class="section-subtitle">In 2021, TVK did not exist as an electoral force. In 2026, it captured over a third of the state's vote. DMK and AIADMK both lost significant ground as the electorate fragmented across three major players.</p>
@@ -1325,7 +1325,7 @@
     </section>
 
     <!-- ===== VOTE SHARE BREAKDOWN ===== -->
-    <section class="container" data-reveal>
+    <section id="vote-breakdown" class="container" data-reveal>
       <div class="vote-share-header">
         <div>
           <h2 class="section-title">The Mathematics of Sentiment</h2>
@@ -1361,8 +1361,32 @@
       </div>
     </section>
 
-    <!-- ===== ACT 5: THE PATTERN (Findings) ===== -->
-    <section class="container" data-reveal>
+    <!-- ===== ACT 5: THE PATTERN (Findings + Research Qs + Conclusion) ===== -->
+    <section id="the-pattern" class="container" data-reveal>
+      <div class="insight-header">
+        <span class="section-label">Research Questions Answered</span>
+        <h2 class="section-title">Three Questions, One Story</h2>
+        <p class="section-subtitle" style="margin-top:8px;">The analysis set out to answer three questions about the 2026 election. Here is what the data revealed.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
+        <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:24px;border:1px solid #ddd;">
+          <span style="font-size:11px;font-weight:600;color:var(--primary);letter-spacing:0.15em;text-transform:uppercase;">Q1 &mdash; The Geographic Story</span>
+          <h4 style="font-family:var(--font-display);font-size:18px;margin:12px 0 8px;">How did seat distribution shift across regions?</h4>
+          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">TVK won seats in all 6 regions, proving state-wide disruption. DMK held Delta and Central. AIADMK nearly collapsed everywhere. The old regional strongholds dissolved into a three-way contest across every zone.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:24px;border:1px solid #ddd;">
+          <span style="font-size:11px;font-weight:600;color:var(--primary);letter-spacing:0.15em;text-transform:uppercase;">Q2 &mdash; The Flip Story</span>
+          <h4 style="font-family:var(--font-display);font-size:18px;margin:12px 0 8px;">In how many constituencies did the winner change?</h4>
+          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">143 constituencies flipped &mdash; 61.5% of the total. DMK lost 56 seats directly to TVK, AIADMK lost 22. The Sankey diagram visualizes every seat movement, and the thickest flows run from both incumbents to the new entrant.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.5);border-radius:12px;padding:24px;border:1px solid #ddd;">
+          <span style="font-size:11px;font-weight:600;color:var(--primary);letter-spacing:0.15em;text-transform:uppercase;">Q3 &mdash; The Vote Share Story</span>
+          <h4 style="font-family:var(--font-display);font-size:18px;margin:12px 0 8px;">Where did TVK&rsquo;s votes come from?</h4>
+          <p style="font-size:13px;color:var(--text-gray);line-height:1.7;">TVK went from 0% to 34.9% in one cycle, pulling from <em>both</em> incumbents. DMK dropped 13.5 percentage points. AIADMK dropped 12.1. The two-party duopoly that defined Tamil Nadu for decades became a three-party system overnight.</p>
+        </div>
+      </div>
+
       <div class="insight-header">
         <span class="section-label">The Pattern</span>
         <h2 class="section-title">Three Insights That Explain the Earthquake</h2>
@@ -1390,6 +1414,16 @@
           <h3>Vote Fragmentation</h3>
           <p>The two-party system is gone. Three parties now control 80% of the vote. DMK fell from 37.8% to 31.2%. AIADMK dropped from 20.1% to 18.4%. The traditional duopoly that defined Tamil Nadu politics for decades has been replaced by a three-way contest.</p>
         </div>
+      </div>
+
+      <div class="conclusion" style="margin-top:48px;padding:32px 40px;background:rgba(255,255,255,0.5);border-radius:16px;border:1px solid #ddd;text-align:center;max-width:800px;margin-left:auto;margin-right:auto;">
+        <span class="section-label" style="display:block;margin-bottom:12px;">Conclusion</span>
+        <p style="font-family:var(--font-display);font-size:22px;font-style:italic;line-height:1.6;color:var(--on-surface);max-width:680px;margin:0 auto;">
+          &ldquo;The 2026 Tamil Nadu election was not a shift — it was a reset. One new party, 143 flipped seats, and a two-party system replaced by a three-way contest. The data tells a story of unprecedented disruption, and the old order has not simply changed — it has been replaced.&rdquo;
+        </p>
+        <p style="font-size:13px;color:var(--text-gray);margin-top:16px;">
+          All data sourced from the Election Commission of India. Analysis reproducible via the project GitHub repository.
+        </p>
       </div>
     </section>
 
@@ -1423,26 +1457,27 @@
           <p class="footer-desc">A data-driven analysis of the 2026 Tamil Nadu Legislative Assembly election — chronicling how TVK flipped 143 seats and reshaped the state's political landscape. Built with open ECI data.</p>
         </div>
         <div class="footer-col">
-          <div class="footer-subtitle">Explore</div>
+          <div class="footer-subtitle">Sections</div>
           <ul class="footer-links">
-            <li><a href="#">Forecasting Tool</a></li>
-            <li><a href="#">Constituency Map</a></li>
-            <li><a href="#">Live Sentiment</a></li>
-            <li><a href="#">Archive</a></li>
+            <li><a href="#the-shock">The Shock (Overview)</a></li>
+            <li><a href="#the-flow">The Flow (Sankey)</a></li>
+            <li><a href="#the-geography">The Geography (Map)</a></li>
+            <li><a href="#the-numbers">The Numbers (Data)</a></li>
+            <li><a href="#the-pattern">The Pattern (Insights)</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-subtitle">Methodology</div>
+          <div class="footer-subtitle">Resources</div>
           <ul class="footer-links">
-            <li><a href="#">Data Sources</a></li>
-            <li><a href="#">Simulation Models</a></li>
-            <li><a href="#">Accuracy Score</a></li>
-            <li><a href="#">Ethics Policy</a></li>
+            <li><a href="https://results.eci.gov.in" target="_blank" rel="noopener">ECI Data Portal</a></li>
+            <li><a href="https://github.com/pavanadithyak/tn-election-2026" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://github.com/pavanadithyak/tn-election-2026/tree/main/scripts" target="_blank" rel="noopener">Analysis Code</a></li>
+            <li><a href="#the-pattern">Methodology Notes</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-subtitle">Newsletter</div>
-          <p class="footer-desc" style="margin-bottom:0;">Get the latest swing-seat analysis delivered weekly to your inbox.</p>
+          <div class="footer-subtitle">Stay Connected</div>
+          <p class="footer-desc" style="margin-bottom:0;">Get the latest election analysis delivered to your inbox.</p>
           <form class="newsletter-form">
             <input type="email" placeholder="Email address" required />
             <button type="submit">Subscribe</button>
@@ -1450,11 +1485,11 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Tamil Nadu Election Forecast. All rights reserved.</span>
+        <span>&copy; 2026 TN Election Analysis. All data from Election Commission of India.</span>
         <div class="footer-bottom-links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="#">Contact</a>
+          <a href="https://github.com/pavanadithyak/tn-election-2026" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://results.eci.gov.in" target="_blank" rel="noopener">ECI</a>
+          <a href="#the-shock">Back to Top</a>
         </div>
       </div>
     </div>
